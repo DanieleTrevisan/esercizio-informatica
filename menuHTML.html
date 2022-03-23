@@ -1,61 +1,79 @@
- <!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lancio dei dadi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {margin: 0;}
+
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+ul.sidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+ 
+ul.sidenav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+ul.sidenav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 25%;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 900px) {
+  ul.sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  ul.sidenav li a {
+    float: left;
+    padding: 15px;
+  }
+  
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  ul.sidenav li a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
 </head>
 <body>
-   
-    <button onclick="LancioDado()">Lancia il dado</button>
-    <p id="output1"></p>
-   
-    <button onclick="Lancia10Dadi(10)">Lancia 10 dadi</button>
-    <p id="output2"></p>
 
-    <button onclick="Lancia1000Dadi(1000)">Lancia 1000 dadi</button>
-    <p id="output3"></p> 
+<ul class="sidenav">
+ 
+  <li><a href="DadoCasuale.html">Lancio dadi</a></li>
 
-    <script>
-        function LancioDado() {
-            let dado=0;
-            let casuale=0;
-            casuale=Math.random();
-            dado=Math.round(casuale*5)+1;
-            document.getElementById("output1").innerHTML=dado+ "<br>";
-        }
-       
-        function Lancia10Dadi(n) {
-            let dado=0;
-            let casuale=0;
-            let str="";
-            for(let i=0;i<n;i++)
-            {
-            casuale=Math.random();
-            dado=Math.round(casuale*5)+1;
-            str=str+" "+ dado+"<br>";  
-            }
-            document.getElementById("output2").innerHTML=str;
-        }
+</ul>
 
-        function Lancia1000Dadi(n) {
-            let dado=0;
-            let casuale=0;
-            let str="";
-            for(let i=0;i<n;i++)
-            {
-            casuale=Math.random();
-            dado=Math.round(casuale*5)+1;
-            str=str+" "+ dado;  
-            }
-            document.getElementById("output3").innerHTML=str;
-            
-        }
-        
-    </script>
+<div class="content">
 
-</body>
-</html>
+</div>
+
 </body>
 </html>
